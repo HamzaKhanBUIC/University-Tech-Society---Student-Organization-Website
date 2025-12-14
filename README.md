@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 Project Overview
+##  Project Overview
 
 This is a complete, professional multi-page website created for the ICT (Introduction to Information & Communication Technology) semester project. The website represents a fictional "University Tech Society" student organization, inspired by Bahria University's branding and academic standards.
 
@@ -25,10 +25,10 @@ The project demonstrates proficiency in HTML5, CSS3, JavaScript, responsive web 
 4. **Uzair** - Content Developer & Documentation Specialist (BU-01-135252-0)
 
 **Individual Contributions:**
-- **Muhammad Ahmed:** HTML structure, CSS styling, Bootstrap integration, form validation, GitHub repository management
-- **Ali Raza:** Project architecture, JavaScript functionality, GitHub Pages deployment setup
-- **Ayesha Khan:** Complete UI/UX design, responsive layouts, CSS animations, color scheme
-- **Sara Fatima:** Content creation, documentation, quality assurance, academic compliance
+- **Saqib Shah:** HTML structure, CSS styling, Bootstrap integration, form validation, GitHub repository management
+- **Hamza Imran:** Project architecture, JavaScript functionality, GitHub Pages deployment setup
+- **Uzair Ali:** Complete UI/UX design, responsive layouts, CSS animations, color scheme
+- **Shayan Khan:** Content creation, documentation, quality assurance, academic compliance
 
 ## 🎯 Project Objectives
 
