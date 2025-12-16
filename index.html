@@ -435,5 +435,34 @@
             });
         });
     </script>
+    // Video Controls
+document.addEventListener('DOMContentLoaded', function() {
+    // Home page video play button
+    const video = document.querySelector('.custom-video');
+    const playBtn = document.querySelector('.play-btn');
+    
+    if (playBtn && video) {
+        playBtn.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        
+        video.addEventListener('play', function() {
+            playBtn.style.opacity = '0';
+            playBtn.style.visibility = 'hidden';
+        });
+        
+        video.addEventListener('pause', function() {
+            playBtn.style.opacity = '1';
+            playBtn.style.visibility = 'visible';
+            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+    }
+});
 </body>
 </html>
