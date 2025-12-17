@@ -20,14 +20,14 @@ The project demonstrates proficiency in HTML5, CSS3, JavaScript, responsive web 
 
 **Group Members:**
 1. **Hamza Imran** - Frontend Developer & ICT Project Lead (BU-01-135252-026)
-2. **Saqib** - Project Lead & Full Stack Developer (BU-01-135252-072)
-3. **Shayan** - UI/UX Designer & Frontend Developer (BU-01-1354252-074)
-4. **Uzair** - Content Developer & Documentation Specialist (BU-01-135252-0)
+2. **Saqib Shah** - Project Lead & Full Stack Developer (BU-01-135252-072)
+3. **Shayan Ullah** - UI/UX Designer & Frontend Developer (BU-01-1354252-074)
+4. **Uzair Ali** - Content Developer & Documentation Specialist (BU-01-135252-081)
 
 **Individual Contributions:**
 - **Hamza Imran:** HTML structure, CSS styling, Bootstrap integration, form validation, GitHub repository management
 - **Saqib Shah:** Project architecture, JavaScript functionality, GitHub Pages deployment setup
-- **Shayan Khan:** Complete UI/UX design, responsive layouts, CSS animations, color scheme
+- **Shayan Ullah:** Complete UI/UX design, responsive layouts, CSS animations, color scheme
 - **Uzair Ali:** Content creation, documentation, quality assurance, academic compliance
 
 ## 🎯 Project Objectives
@@ -39,5 +39,3 @@ This project was developed to:
 - Follow strict ICT project requirements
 - Showcase proper file organization and documentation
 - Prepare for viva/presentation with clean, explainable code
-
-## 📁 Folder Structure
