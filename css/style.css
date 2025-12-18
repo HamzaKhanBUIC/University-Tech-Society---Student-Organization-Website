@@ -1223,3 +1223,31 @@ a {
         grid-template-columns: 1fr;
     }
 }
+<div class="event-video-card">
+
+    <div class="event-video-container video-thumb" 
+         data-video="videos/hackathon.mp4">
+
+        <img src="images/thumbnails/hackathon.jpg" 
+             alt="Hackathon Event Thumbnail" 
+             class="video-thumbnail">
+
+        <div class="video-play-overlay">
+            <i class="fas fa-play"></i>
+        </div>
+    </div>
+
+    <div class="event-video-info">
+        <h4 class="event-video-title">Annual Hackathon 2025</h4>
+        <p class="event-video-desc">
+            Highlights from our 24-hour coding competition.
+        </p>
+
+        <div class="event-video-meta">
+            <span><i class="fas fa-calendar"></i> March 2025</span>
+            <span><i class="fas fa-users"></i> BU Students</span>
+        </div>
+    </div>
+
+</div>
+
