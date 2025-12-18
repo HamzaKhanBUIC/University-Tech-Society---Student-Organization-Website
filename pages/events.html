@@ -10,40 +10,47 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <style>
         /* Additional styles specific to events page */
+        :root {
+            /* Define missing color variables */
+            --success-green: #28a745;
+            --error-red: #dc3545;
+            --warning-orange: #ffc107;
+        }
+        
         .events-header {
             background: linear-gradient(rgba(11, 60, 93, 0.9), rgba(11, 60, 93, 0.95)),
                         url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: var(--spacing-xl) 0;
+            padding: 4rem 0;
             margin-top: 70px;
             text-align: center;
-            color: var(--white);
+            color: white;
         }
         
         .events-header h1 {
-            color: var(--white);
+            color: white;
             font-size: 2.5rem;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 1rem;
         }
         
         .events-header p {
-            color: var(--light-grey);
+            color: #F4F6F8;
             max-width: 600px;
             margin: 0 auto;
             font-size: 1.1rem;
         }
         
         .events-container {
-            padding: var(--spacing-xl) 0;
+            padding: 4rem 0;
         }
         
         .table-wrapper {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-medium);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 3rem;
         }
         
         .events-table {
@@ -52,30 +59,30 @@
         }
         
         .events-table thead {
-            background-color: var(--navy-blue);
-            color: var(--white);
+            background-color: #0B3C5D;
+            color: white;
         }
         
         .events-table th {
-            padding: var(--spacing-md) var(--spacing-sm);
+            padding: 1rem 0.75rem;
             text-align: left;
             font-weight: 600;
             font-size: 1.1rem;
-            border-bottom: 3px solid var(--accent-gold);
+            border-bottom: 3px solid #D4AF37;
         }
         
         .events-table th i {
-            margin-right: var(--spacing-xs);
-            color: var(--accent-gold);
+            margin-right: 0.5rem;
+            color: #D4AF37;
         }
         
         .events-table tbody tr {
-            transition: all var(--transition-fast);
-            border-bottom: 1px solid var(--medium-grey);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #E8EAED;
         }
         
         .events-table tbody tr:nth-child(even) {
-            background-color: var(--light-grey);
+            background-color: #F4F6F8;
         }
         
         .events-table tbody tr:hover {
@@ -84,32 +91,32 @@
         }
         
         .events-table td {
-            padding: var(--spacing-md) var(--spacing-sm);
-            color: var(--text-dark);
+            padding: 1rem 0.75rem;
+            color: #333333;
         }
         
         .event-name {
             font-weight: 600;
-            color: var(--navy-blue);
+            color: #0B3C5D;
         }
         
         .event-name i {
-            color: var(--accent-gold);
-            margin-right: var(--spacing-xs);
+            color: #D4AF37;
+            margin-right: 0.5rem;
         }
         
         .event-date {
-            color: var(--text-light);
+            color: #666666;
         }
         
         .event-venue {
-            color: var(--text-dark);
+            color: #333333;
         }
         
         .event-status {
             display: inline-block;
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-md);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
             font-weight: 500;
             font-size: 0.9rem;
             text-align: center;
@@ -124,36 +131,36 @@
         
         .status-ongoing {
             background-color: rgba(255, 193, 7, 0.1);
-            color: var(--warning-orange);
+            color: #ffc107;
             border: 1px solid rgba(255, 193, 7, 0.2);
         }
         
         .status-completed {
             background-color: rgba(40, 167, 69, 0.1);
-            color: var(--success-green);
+            color: #28a745;
             border: 1px solid rgba(40, 167, 69, 0.2);
         }
         
         .status-cancelled {
             background-color: rgba(220, 53, 69, 0.1);
-            color: var(--error-red);
+            color: #dc3545;
             border: 1px solid rgba(220, 53, 69, 0.2);
         }
         
         .events-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
         
         .summary-card {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: transform var(--transition-normal);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
         
         .summary-card:hover {
@@ -162,36 +169,178 @@
         
         .summary-icon {
             font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: var(--spacing-sm);
+            color: #D4AF37;
+            margin-bottom: 1rem;
         }
         
         .summary-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--navy-blue);
-            margin-bottom: var(--spacing-xs);
+            color: #0B3C5D;
+            margin-bottom: 0.5rem;
         }
         
         .summary-label {
-            color: var(--text-light);
+            color: #666666;
             font-size: 1rem;
         }
         
         .table-note {
             text-align: center;
-            color: var(--text-light);
+            color: #666666;
             font-size: 0.9rem;
-            margin-top: var(--spacing-md);
-            padding: var(--spacing-sm);
-            background-color: var(--light-grey);
-            border-radius: var(--radius-md);
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #F4F6F8;
+            border-radius: 8px;
         }
         
+        /* ========== EVENTS PAGE VIDEOS SECTION ========== */
+        .events-videos-section {
+            background-color: white;
+            border-top: 1px solid #E8EAED;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .events-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .event-video-card {
+            background: #F4F6F8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid #E8EAED;
+        }
+        
+        .event-video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-video-container {
+            position: relative;
+            background-color: #0B3C5D;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .event-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: white;
+            background: linear-gradient(135deg, #0B3C5D, #082A44);
+        }
+        
+        .video-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #D4AF37;
+        }
+        
+        .event-video-info {
+            padding: 1.5rem;
+        }
+        
+        .event-video-title {
+            color: #0B3C5D;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .event-video-desc {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .event-video-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #666666;
+            font-size: 0.85rem;
+        }
+        
+        .event-video-meta i {
+            color: #D4AF37;
+            margin-right: 5px;
+        }
+        
+        .event-video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        
+        .event-video-link:hover {
+            color: #0B3C5D;
+        }
+        
+        .video-upload-cta {
+            background: linear-gradient(135deg, #0B3C5D, #082A44);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .video-upload-cta h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .video-upload-cta h3 i {
+            color: #D4AF37;
+        }
+        
+        .upload-video-btn {
+            background-color: #D4AF37;
+            color: #0B3C5D;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .upload-video-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .events-header {
                 margin-top: 60px;
-                padding: var(--spacing-lg) 0;
+                padding: 3rem 0;
             }
             
             .events-header h1 {
@@ -209,6 +358,10 @@
             .events-summary {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .events-videos-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -218,13 +371,18 @@
             
             .events-table th,
             .events-table td {
-                padding: var(--spacing-sm) var(--spacing-xs);
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .event-video-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar (Same as index.html) -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <!-- Logo -->
@@ -431,110 +589,115 @@
             
             <!-- How to Participate Section -->
             <section class="participation-section">
-                <div class="purpose-card" style="margin-top: var(--spacing-xl);">
-                    <div class="card-icon">
+                <div class="purpose-card" style="margin-top: 2rem; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
+                    <div class="card-icon" style="font-size: 2.5rem; color: #D4AF37; margin-bottom: 1rem;">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <h3 class="card-title">How to Participate in Events</h3>
-                    <p class="card-text">
+                    <h3 class="card-title" style="color: #0B3C5D; margin-bottom: 1rem;">How to Participate in Events</h3>
+                    <p class="card-text" style="color: #666666; margin-bottom: 1.5rem;">
                         1. Check the events table for upcoming activities<br>
                         2. Register for your preferred event using our registration form<br>
                         3. Receive confirmation email with event details<br>
                         4. Attend the event and participate actively<br>
                         5. Share your feedback to help us improve
                     </p>
-                    <a href="register.html" class="submit-button" style="width: auto; margin-top: var(--spacing-md);">
+                    <a href="register.html" class="submit-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #0B3C5D; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
                         <i class="fas fa-user-plus"></i> Register for Events
                     </a>
                 </div>
             </section>
         </div>
     </main>
+    
     <!-- Videos Section on Events Page -->
-<section class="section events-videos-section">
-    <div class="container">
-        <h2 class="section-title"><span class="title-icon"><i class="fas fa-film"></i></span> Event Videos & Tutorials</h2>
-        <p class="section-subtitle">Watch recordings of past events and technical tutorials</p>
-        
-        <div class="events-videos-grid">
-            <!-- Video 1 -->
-            <div class="event-video-card">
-                <div class="event-video-container">
-                    <video controls poster="../images/video-thumb1.jpg">
-                        <source src="../videos/event-demo1.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-                </div>
-                <div class="event-video-info">
-                    <h3 class="event-video-title">Web Development Workshop</h3>
-                    <p class="event-video-desc">Recording of our HTML, CSS, and JavaScript workshop for beginners cc techfusion.bu.</p>
-                    <div class="event-video-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 15, 2024</span>
-                        <span><i class="fas fa-clock"></i> 45:20 min</span>
-                        <span><i class="fas fa-users"></i> 85 attendees</span>
+    <section class="section events-videos-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; color: #0B3C5D; margin-bottom: 1rem; font-size: 2rem;">
+                <span style="color: #D4AF37;"><i class="fas fa-film"></i></span> Event Videos & Tutorials
+            </h2>
+            <p class="section-subtitle" style="text-align: center; color: #666666; margin-bottom: 2rem; font-size: 1.1rem;">
+                Watch recordings of past events and technical tutorials
+            </p>
+            
+            <div class="events-videos-grid">
+                <!-- Video 1 -->
+                <div class="event-video-card">
+                    <div class="event-video-container">
+                        <video controls poster="../images/video-thumb1.jpg">
+                            <source src="../videos/event-demo1.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
                     </div>
-                    <a href="#" class="event-video-link">
-                        <i class="fas fa-download"></i> Download Slides
-                    </a>
+                    <div class="event-video-info">
+                        <h3 class="event-video-title">Web Development Workshop</h3>
+                        <p class="event-video-desc">Recording of our HTML, CSS, and JavaScript workshop for beginners cc techfusion.bu.</p>
+                        <div class="event-video-meta">
+                            <span><i class="fas fa-calendar"></i> Feb 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 45:20 min</span>
+                            <span><i class="fas fa-users"></i> 85 attendees</span>
+                        </div>
+                        <a href="#" class="event-video-link">
+                            <i class="fas fa-download"></i> Download Slides
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="event-video-card">
+                    <div class="event-video-container">
+                        <video controls poster="../images/video-thumb2.jpg">
+                            <source src="../videos/event-demo2.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="event-video-info">
+                        <h3 class="event-video-title">GamingHunt 2024 Highlights</h3>
+                        <p class="event-video-desc">Highlights from our annual 24-hour e-gaming event cc techfusion.bu.</p>
+                        <div class="event-video-meta">
+                            <span><i class="fas fa-calendar"></i> Feb 10, 2024</span>
+                            <span><i class="fas fa-clock"></i> 12:45 min</span>
+                            <span><i class="fas fa-users"></i> 150 participants</span>
+                        </div>
+                        <a href="#" class="event-video-link">
+                            <i class="fas fa-images"></i> View Photos
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="event-video-card">
+                    <div class="event-video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-video"></i>
+                            <p>Upcoming Event Recording</p>
+                        </div>
+                    </div>
+                    <div class="event-video-info">
+                        <h3 class="event-video-title">AI Workshop Coming Soon</h3>
+                        <p class="event-video-desc">Recording will be available after our AI & Machine Learning workshop on March 22, 2024.</p>
+                        <div class="event-video-meta">
+                            <span><i class="fas fa-calendar"></i> March 22, 2024</span>
+                            <span><i class="fas fa-clock"></i> Coming Soon</span>
+                            <span><i class="fas fa-users"></i> Expected: 100+</span>
+                        </div>
+                        <a href="register.html" class="event-video-link">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </a>
+                    </div>
                 </div>
             </div>
             
-            <!-- Video 2 -->
-            <div class="event-video-card">
-                <div class="event-video-container">
-                    <video controls poster="../images/video-thumb2.jpg">
-                        <source src="../videos/event-demo2.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-                </div>
-                <div class="event-video-info">
-                    <h3 class="event-video-title">GamingHunt 2024 Highlights</h3>
-                    <p class="event-video-desc">Highlights from our annual 24-hour coding egaming event cc techfusion.bu.</p>
-                    <div class="event-video-meta">
-                        <span><i class="fas fa-calendar"></i> Feb 10, 2024</span>
-                        <span><i class="fas fa-clock"></i> 12:45 min</span>
-                        <span><i class="fas fa-users"></i> 150 participants</span>
-                    </div>
-                    <a href="#" class="event-video-link">
-                        <i class="fas fa-images"></i> View Photos
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Video 3 (Optional) -->
-            <div class="event-video-card">
-                <div class="event-video-container">
-                    <div class="video-placeholder">
-                        <i class="fas fa-video"></i>
-                        <p>Upcoming Event Recording</p>
-                    </div>
-                </div>
-                <div class="event-video-info">
-                    <h3 class="event-video-title">AI Workshop Coming Soon</h3>
-                    <p class="event-video-desc">Recording will be available after our AI & Machine Learning workshop on March 22, 2024.</p>
-                    <div class="event-video-meta">
-                        <span><i class="fas fa-calendar"></i> March 22, 2024</span>
-                        <span><i class="fas fa-clock"></i> Coming Soon</span>
-                        <span><i class="fas fa-users"></i> Expected: 100+</span>
-                    </div>
-                    <a href="register.html" class="event-video-link">
-                        <i class="fas fa-user-plus"></i> Register Now
-                    </a>
-                </div>
+            <div class="video-upload-cta">
+                <h3><i class="fas fa-upload"></i> Share Your Event Videos</h3>
+                <p>Bahria University students can submit videos of tech events they've attended or organized.</p>
+                <button class="upload-video-btn" onclick="showUploadForm()">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload Event Video
+                </button>
             </div>
         </div>
-        
-        <div class="video-upload-cta">
-            <h3><i class="fas fa-upload"></i> Share Your Event Videos</h3>
-            <p>Bahria University students can submit videos of tech events they've attended or organized.</p>
-            <button class="upload-video-btn" onclick="showUploadForm()">
-                <i class="fas fa-cloud-upload-alt"></i> Upload Event Video
-            </button>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Footer (Same as index.html) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
@@ -580,6 +743,7 @@
                 
                 <div class="copyright">
                     <p>&copy; 2024 University Tech Society. All rights reserved. | This website is created for ICT Semester Project.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Developed by: Hamza Imran, Uzair Ali, Shayan Ullah, Saqib Shah</p>
                 </div>
             </div>
         </div>
@@ -590,7 +754,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript for basic interactivity -->
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -614,13 +778,24 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Table row click effect (for demonstration)
+        // Table row click effect
         document.querySelectorAll('.events-table tbody tr').forEach(row => {
             row.addEventListener('click', function() {
                 const eventName = this.querySelector('.event-name').textContent.trim();
-                alert(`You selected: ${eventName}\n\nThis is a demonstration of JavaScript interactivity. In a real application, this would navigate to event details.`);
+                alert(`📅 Event Selected: ${eventName}\n\nThis demonstrates JavaScript interactivity for the ICT project.`);
             });
         });
+
+        // Video upload simulation
+        function showUploadForm() {
+            alert('📤 Event Video Upload Form:\n\n' +
+                  '1. Select video file (MP4, max 100MB)\n' +
+                  '2. Enter event title and description\n' +
+                  '3. Select event date and category\n' +
+                  '4. Add your name and student ID\n' +
+                  '5. Submit for review\n\n' +
+                  'Note: This is a simulation for ICT project. No actual upload occurs.');
+        }
 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -629,15 +804,5 @@
             });
         });
     </script>
-    // Events page video upload simulation
-function showUploadForm() {
-    alert('Event Video Upload Form:\n\n' +
-          '1. Select video file (MP4, max 100MB)\n' +
-          '2. Enter event title and description\n' +
-          '3. Select event date and category\n' +
-          '4. Add your name and student ID\n' +
-          '5. Submit for review\n\n' +
-          'Note: This is a simulation for ICT project. No actual upload occurs.');
-}
 </body>
 </html>

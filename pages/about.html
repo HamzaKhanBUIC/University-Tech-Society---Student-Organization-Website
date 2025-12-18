@@ -10,54 +10,109 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <style>
         /* Custom styles for about page */
+        :root {
+            /* Define missing color variables */
+            --dark-blue: #082A44;
+            --medium-grey: #E8EAED;
+            --text-light: #666666;
+            --text-dark: #333333;
+            --light-grey: #F4F6F8;
+            --navy-blue: #0B3C5D;
+            --accent-gold: #D4AF37;
+            --white: #FFFFFF;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition-normal: 0.3s ease;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
         .about-header {
             background: linear-gradient(rgba(11, 60, 93, 0.9), rgba(11, 60, 93, 0.95)),
                         url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: var(--spacing-xl) 0;
+            padding: 4rem 0;
             margin-top: 70px;
             text-align: center;
-            color: var(--white);
+            color: white;
         }
         
         .about-header h1 {
-            color: var(--white);
+            color: white;
             font-size: 2.5rem;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 1rem;
         }
         
         .about-header p {
-            color: var(--light-grey);
+            color: #F4F6F8;
             max-width: 600px;
             margin: 0 auto;
             font-size: 1.1rem;
         }
         
         .about-container {
-            padding: var(--spacing-xl) 0;
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #0B3C5D;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #D4AF37;
+        }
+        
+        .title-icon {
+            color: #D4AF37;
+            margin-right: 0.5rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
         }
         
         /* Mission & Vision Section */
         .mission-vision-section {
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 3rem;
         }
         
         .mission-vision-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .mission-card, .vision-card {
-            background: var(--white);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-medium);
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            transition: transform var(--transition-normal);
-            border-top: 5px solid var(--accent-gold);
+            transition: transform 0.3s ease;
+            border-top: 5px solid #D4AF37;
         }
         
         .mission-card:hover, .vision-card:hover {
@@ -66,109 +121,131 @@
         
         .mission-icon, .vision-icon {
             font-size: 3rem;
-            color: var(--accent-gold);
-            margin-bottom: var(--spacing-md);
+            color: #D4AF37;
+            margin-bottom: 1rem;
         }
         
         /* Objectives Section */
         .objectives-section {
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 3rem;
         }
         
         .objectives-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .objective-item {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-light);
-            transition: all var(--transition-normal);
-            border-left: 4px solid var(--accent-gold);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #D4AF37;
         }
         
         .objective-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .objective-number {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: var(--accent-gold);
-            color: var(--navy-blue);
+            background-color: #D4AF37;
+            color: #0B3C5D;
             border-radius: 50%;
             text-align: center;
             line-height: 40px;
             font-weight: 700;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: 1rem;
         }
         
-        /* Team Section - Project Credits */
+        /* Team Section */
         .team-section {
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 3rem;
         }
         
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .team-member-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow-medium);
-            transition: all var(--transition-normal);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             text-align: center;
         }
         
         .team-member-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
         
         .member-header {
-            background-color: var(--navy-blue);
-            padding: var(--spacing-lg);
-            color: var(--white);
+            background-color: #0B3C5D;
+            padding: 1.5rem;
+            color: white;
         }
         
         .member-avatar-large {
-            font-size: 4rem;
-            margin-bottom: var(--spacing-sm);
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+        }
+        
+        .member-avatar-large i {
+            font-size: 120px;
+            color: white;
+        }
+        
+        .member-avatar-large img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #D4AF37;
+            display: block;
+        }
+        
+        /* Hide icon when image is present */
+        .member-avatar-large:has(img) i {
+            display: none;
         }
         
         .member-name {
             font-size: 1.5rem;
-            margin-bottom: var(--spacing-xs);
-            color: var(--white);
+            margin-bottom: 0.5rem;
+            color: white;
         }
         
         .member-role {
-            color: var(--accent-gold);
+            color: #D4AF37;
             font-weight: 500;
+            margin-bottom: 0.5rem;
         }
         
         .member-body {
-            padding: var(--spacing-lg);
+            padding: 1.5rem;
         }
         
         .member-contributions {
             text-align: left;
-            margin-top: var(--spacing-md);
+            margin-top: 1rem;
         }
         
         .member-contributions h4 {
-            color: var(--navy-blue);
-            margin-bottom: var(--spacing-sm);
+            color: #0B3C5D;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
         }
         
@@ -178,16 +255,16 @@
         }
         
         .contributions-list li {
-            padding: var(--spacing-xs) 0;
-            color: var(--text-light);
+            padding: 0.5rem 0;
+            color: #666666;
             font-size: 0.9rem;
             position: relative;
-            padding-left: var(--spacing-md);
+            padding-left: 1.5rem;
         }
         
         .contributions-list li:before {
             content: "✓";
-            color: var(--accent-gold);
+            color: #D4AF37;
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -195,109 +272,109 @@
         
         .member-id {
             display: inline-block;
-            background-color: var(--light-grey);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-md);
+            background-color: #F4F6F8;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
             font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: var(--spacing-sm);
+            color: #666666;
+            margin-top: 0.5rem;
         }
         
         /* Society Structure */
         .structure-section {
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: 3rem;
         }
         
         .structure-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .structure-card {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: all var(--transition-normal);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
         
         .structure-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .structure-icon {
             font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: var(--spacing-sm);
+            color: #D4AF37;
+            margin-bottom: 1rem;
         }
         
         /* Contact CTA */
         .contact-cta {
-            background: linear-gradient(135deg, var(--navy-blue), var(--dark-blue));
-            color: var(--white);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, #0B3C5D, #082A44);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
             text-align: center;
-            margin-top: var(--spacing-xl);
+            margin-top: 3rem;
         }
         
         .contact-cta h2 {
-            color: var(--white);
-            margin-bottom: var(--spacing-sm);
+            color: white;
+            margin-bottom: 1rem;
         }
         
         .contact-cta p {
-            color: var(--light-grey);
+            color: #F4F6F8;
             max-width: 600px;
-            margin: 0 auto var(--spacing-lg);
+            margin: 0 auto 1.5rem;
         }
         
         .cta-buttons {
             display: flex;
-            gap: var(--spacing-md);
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .cta-button {
             display: inline-block;
-            padding: var(--spacing-sm) var(--spacing-xl);
-            border-radius: var(--radius-md);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
         }
         
         .cta-button.primary {
-            background-color: var(--accent-gold);
-            color: var(--navy-blue);
+            background-color: #D4AF37;
+            color: #0B3C5D;
         }
         
         .cta-button.primary:hover {
-            background-color: var(--white);
+            background-color: white;
             transform: translateY(-3px);
         }
         
         .cta-button.secondary {
             background-color: transparent;
-            color: var(--white);
-            border: 2px solid var(--accent-gold);
+            color: white;
+            border: 2px solid #D4AF37;
         }
         
         .cta-button.secondary:hover {
-            background-color: var(--accent-gold);
-            color: var(--navy-blue);
+            background-color: #D4AF37;
+            color: #0B3C5D;
             transform: translateY(-3px);
         }
         
         @media (max-width: 768px) {
             .about-header {
                 margin-top: 60px;
-                padding: var(--spacing-lg) 0;
+                padding: 3rem 0;
             }
             
             .about-header h1 {
@@ -327,6 +404,10 @@
             
             .structure-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contributions-list li {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -440,7 +521,7 @@
                             <div class="member-avatar-large">
                                 <i class="fas fa-user-circle"></i>
                             </div>
-                            <h3 class="member-name">Saqib shah</h3>
+                            <h3 class="member-name">Saqib Shah</h3>
                             <p class="member-role">Project Lead & Full Stack Developer</p>
                             <div class="member-id">BU-01-135252-072</div>
                         </div>
@@ -466,9 +547,9 @@
                             <div class="member-avatar-large">
                                 <i class="fas fa-user-circle"></i>
                             </div>
-                            <h3 class="member-name">SHAYAN ULLAH</h3>
+                            <h3 class="member-name">Shayan Ullah</h3>
                             <p class="member-role">UI/UX Designer & Frontend Developer</p>
-                            <div class="member-id">BU-01-1354252-074</div>
+                            <div class="member-id">BU-01-135252-074</div>
                         </div>
                         <div class="member-body">
                             <p>Designed the complete user interface and user experience for the website with a focus on accessibility.</p>
@@ -492,9 +573,9 @@
                             <div class="member-avatar-large">
                                 <i class="fas fa-user-circle"></i>
                             </div>
-                            <h3 class="member-name">Uzair</h3>
+                            <h3 class="member-name">Uzair Ali</h3>
                             <p class="member-role">Content Developer & Documentation Specialist</p>
-                            <div class="member-id">BU-01-135252-0</div>
+                            <div class="member-id">BU-01-135252-096</div>
                         </div>
                         <div class="member-body">
                             <p>Created all website content, documentation, and ensured academic compliance with project requirements.</p>
@@ -516,11 +597,11 @@
                     <div class="team-member-card">
                         <div class="member-header">
                             <div class="member-avatar-large">
-    <img src="../images/my-photo.jpg" alt="Hamza Imran">
-    <i class="fas fa-user-circle"></i>
-</div>
+                                <img src="../images/my-photo.jpg" alt="Hamza Imran">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
                             <h3 class="member-name">Hamza Imran</h3>
-                            <p class="member-role">Frontend Developer,ICT Project Lead & Initiator of project</p>
+                            <p class="member-role">Frontend Developer & ICT Project Lead</p>
                             <div class="member-id">BU-01-135252-026</div>
                         </div>
                         <div class="member-body">
@@ -661,7 +742,7 @@
                 
                 <div class="copyright">
                     <p>&copy; 2024 University Tech Society. All rights reserved. | This website is created for ICT Semester Project.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Developed by: Muhammad Ahmed, Ali Raza, Ayesha Khan, Sara Fatima</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Developed by: Hamza Imran, Uzair Ali, Shayan Ullah, Saqib Shah</p>
                 </div>
             </div>
         </div>
@@ -672,7 +753,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript for basic interactivity -->
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -708,8 +789,8 @@
                     this.style.transform = '';
                 }, 200);
                 
-                // Log to console for demonstration
-                console.log(`Selected team member: ${memberName} - ${memberRole}`);
+                // Show alert with team member info
+                alert(`👤 Team Member Info:\n\nName: ${memberName}\nRole: ${memberRole}\n\nThis demonstrates JavaScript interactivity for the ICT project.`);
             });
         });
 

@@ -8,6 +8,137 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        /* Video Section CSS */
+        .video-section {
+            background-color: var(--light-grey);
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .video-demo {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            background-color: var(--navy-blue);
+        }
+        
+        .custom-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
+        }
+        
+        .video-controls-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        .play-btn {
+            background-color: var(--accent-gold);
+            color: var(--navy-blue);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-btn:hover {
+            background-color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .video-info h3 {
+            color: var(--navy-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .video-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .video-meta i {
+            color: var(--accent-gold);
+            margin-right: 5px;
+        }
+        
+        .video-note {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+        
+        .video-note i {
+            color: var(--accent-gold);
+            margin-right: var(--spacing-xs);
+        }
+        
+        /* Team Member Images */
+        .member-avatar {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+        }
+        
+        .member-avatar i {
+            font-size: 100px;
+            color: var(--navy-blue);
+        }
+        
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+            display: block;
+        }
+        
+        /* Hide icon when image is present */
+        .member-avatar:has(img) i {
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .video-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .video-meta {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -71,11 +202,11 @@
                             practical skills and real-world experience.
                         </p>
                     </div>
-                   <div class="intro-image">
-    <img src="images/students-collaborating.jpg" 
-         alt="Students collaborating on technology project" class="placeholder-img">
-    <div class="image-caption">Students collaborating on innovative tech projects cc techfusion.bu</div>
-</div>
+                    <div class="intro-image">
+                        <img src="images/students-collaborating.jpg" 
+                             alt="Students collaborating on technology project" class="placeholder-img">
+                        <div class="image-caption">Students collaborating on innovative tech projects cc techfusion.bu</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -141,7 +272,7 @@
                             <i class="fas fa-user-circle"></i>
                         </div>
                         <h3 class="member-name">Uzair Ali</h3>
-                        <p class="member-role">Content Developer & Documentation Specialist </p>
+                        <p class="member-role">Content Developer & Documentation Specialist</p>
                         <p class="member-id">BU-01-135252-096</p>
                     </div>
                     
@@ -154,15 +285,16 @@
                         <p class="member-id">BU-01-135252-074</p>
                     </div>
                     
-                   <div class="member-card has-image">
-    <div class="member-avatar">
-        <img src="images/my-photo.jpg" alt="Hamza Imran">
-        <i class="fas fa-user-circle"></i>
-    </div>
-    <h3 class="member-name">Hamza Imran</h3>
-    <p class="member-role">Frontend Developer,ICT Project Lead & Initiator of project</p>
-    <p class="member-id">BU-01-135252-026</p>
-</div>
+                    <div class="member-card has-image">
+                        <div class="member-avatar">
+                            <img src="images/my-photo.jpg" alt="Hamza Imran">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 class="member-name">Hamza Imran</h3>
+                        <p class="member-role">Frontend Developer & ICT Project Lead</p>
+                        <p class="member-id">BU-01-135252-026</p>
+                    </div>
+                    
                     <div class="member-card">
                         <div class="member-avatar">
                             <i class="fas fa-user-circle"></i>
@@ -174,42 +306,43 @@
                 </div>
             </div>
         </section>
-        <!-- Video Section on Home Page -->
-<section class="section video-section">
-    <div class="container">
-        <h2 class="section-title"><span class="title-icon"><i class="fas fa-video"></i></span> Bahria University</h2>
-        <p class="section-subtitle">Watch a birds eye view of bahria University E8 where you can join butech society cc Bahria University</p>
-        
-        <div class="video-demo">
-            <div class="video-wrapper">
-                <video controls class="custom-video">
-                    <source src="videos/home-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-controls-overlay">
-                    <button class="play-btn"><i class="fas fa-play"></i></button>
-                </div>
-            </div>
-            
-            <div class="video-info">
-                <h3>Inspired by our journey at Bahria University,We are giving back the gift of inspiration</h3>
-                <p>This video demonstrates the key features of our University and its societies where you can choose any profession you interest.</p>
-                <div class="video-meta">
-                    <span><i class="fas fa-clock"></i> Duration: 2:30 min</span>
-                    <span><i class="fas fa-calendar"></i> Uploaded: March 2024</span>
-                    <span><i class="fas fa-user"></i> By: Hamza Imran</span>
-                </div>
-                
-                <div class="video-note">
-                    <i class="fas fa-info-circle"></i> 
-                    <strong>Note:</strong> Video owner Bahria University.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-        <!-- Event Posting Section (Static Simulation) -->
+        <!-- Video Section -->
+        <section class="section video-section">
+            <div class="container">
+                <h2 class="section-title"><span class="title-icon"><i class="fas fa-video"></i></span> Bahria University</h2>
+                <p class="section-subtitle">Watch a birds eye view of Bahria University E8 where you can join Tech Society</p>
+                
+                <div class="video-demo">
+                    <div class="video-wrapper">
+                        <video controls class="custom-video">
+                            <source src="videos/home-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-controls-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="video-info">
+                        <h3>Inspired by our journey at Bahria University</h3>
+                        <p>This video demonstrates the campus facilities and opportunities available at Bahria University for students to join various societies.</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-clock"></i> Duration: 2:30 min</span>
+                            <span><i class="fas fa-calendar"></i> Uploaded: March 2024</span>
+                            <span><i class="fas fa-user"></i> By: Hamza Imran</span>
+                        </div>
+                        
+                        <div class="video-note">
+                            <i class="fas fa-info-circle"></i> 
+                            <strong>Note:</strong> Video courtesy of Bahria University.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Posting Section -->
         <section class="section event-post-section">
             <div class="container">
                 <h2 class="section-title"><span class="title-icon"><i class="fas fa-calendar-plus"></i></span> Share Event Happenings</h2>
@@ -257,7 +390,7 @@
                             </button>
                             <p class="form-note">
                                 <i class="fas fa-info-circle"></i> Note: This is a simulation for the ICT project. 
-                                Events will display temporarily but won't be saved permanently (no backend).
+                                Events will display temporarily but won't be saved permanently.
                             </p>
                         </form>
                     </div>
@@ -280,7 +413,7 @@
                                 <p class="event-post-desc">Learn HTML, CSS, and JavaScript in our intensive 3-day bootcamp.</p>
                                 <div class="event-post-meta">
                                     <span class="meta-item"><i class="fas fa-calendar"></i> Feb 10, 2024</span>
-                                    <span class="meta-item"><i class="fas fa-user"></i> Ali Raza</span>
+                                    <span class="meta-item"><i class="fas fa-user"></i> Hamza Imran</span>
                                     <span class="meta-item category workshop">Workshop</span>
                                 </div>
                             </div>
@@ -336,7 +469,8 @@
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy; 2025 University Tech Society. All rights reserved. | This website is created for ICT Semester Project.</p>
+                    <p>&copy; 2024 University Tech Society. All rights reserved. | ICT Semester Project</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Developed by: Hamza Imran, Uzair Ali, Shayan Ullah, Saqib Shah</p>
                 </div>
             </div>
         </div>
@@ -347,7 +481,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript for basic interactivity -->
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
@@ -371,7 +505,38 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Simulated Event Form Submission
+        // Video Controls
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.custom-video');
+            const playBtn = document.querySelector('.play-btn');
+            
+            if (playBtn && video) {
+                playBtn.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        playBtn.style.opacity = '0';
+                    } else {
+                        video.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        playBtn.style.opacity = '1';
+                    }
+                });
+                
+                video.addEventListener('play', function() {
+                    playBtn.style.opacity = '0';
+                    playBtn.style.visibility = 'hidden';
+                });
+                
+                video.addEventListener('pause', function() {
+                    playBtn.style.opacity = '1';
+                    playBtn.style.visibility = 'visible';
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                });
+            }
+        });
+
+        // Event Form Submission
         document.getElementById('eventForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -407,7 +572,7 @@
             eventsList.insertBefore(newEvent, eventsList.firstChild);
             
             // Show success message
-            alert('Event posted successfully! (Note: This is a simulation. Events are not saved permanently.)');
+            alert('Event posted successfully! (Note: This is a simulation for ICT project.)');
             
             // Reset form
             document.getElementById('eventForm').reset();
@@ -416,7 +581,7 @@
             document.querySelector('.nav-menu').classList.remove('active');
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if (this.getAttribute('href') !== '#') {
@@ -434,37 +599,6 @@
                 }
             });
         });
-    </script>
-    <script>
-    // Video Controls
-document.addEventListener('DOMContentLoaded', function() {
-    // Home page video play button
-    const video = document.querySelector('.custom-video');
-    const playBtn = document.querySelector('.play-btn');
-    
-    if (playBtn && video) {
-        playBtn.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                video.pause();
-                playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        });
-        
-        video.addEventListener('play', function() {
-            playBtn.style.opacity = '0';
-            playBtn.style.visibility = 'hidden';
-        });
-        
-        video.addEventListener('pause', function() {
-            playBtn.style.opacity = '1';
-            playBtn.style.visibility = 'visible';
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        });
-    }
-});
     </script>
 </body>
 </html>
