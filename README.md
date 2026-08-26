@@ -1,41 +1,69 @@
-# University Tech Society - Student Organization Website
+# University Tech Society: Student Organization Portal
 
-## ICT Semester Project - Introduction to Information & Communication Technology
+> Multi-page responsive static web portal built for the university ICT semester project demonstrating HTML5, CSS3 styling, and JavaScript form validation.
 
-**Project Title:** University Tech Society - Student Organization Website  
-**Course:** Introduction to Information & Communication Technology  
-**Institution:** Inspired by Bahria University  
-**Project Type:** Multi-page Static Website  
-**Deployment Platform:** GitHub Pages  
+[![HTML5](https://img.shields.io/badge/Language-HTML5-E34F26.svg?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/Styles-CSS3-1572B6.svg?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/Scripts-JavaScript-F7DF1E.svg?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-##  Project Overview
+## Overview
 
-This is a complete, professional multi-page website created for the ICT (Introduction to Information & Communication Technology) semester project. The website represents a fictional "University Tech Society" student organization, inspired by Bahria University's branding and academic standards.
+This repository contains a multi-page static portal designed for a university student technology organization. Developed as a collaborative foundation project, the site implements responsive layout techniques, navigation menus, event galleries, registration workflows, and client-side form validation.
 
-The project demonstrates proficiency in HTML5, CSS3, JavaScript, responsive web design, and follows all university project requirements for an ICT semester assignment.
+---
 
-## 👥 Project Development Team
+## Core Capabilities
 
-**Group Members:**
-1. **Hamza Imran** - Frontend Developer & ICT Project Lead (BU-01-135252-026)
-2. **Saqib Shah** - Project Lead & Full Stack Developer (BU-01-135252-072)
-3. **Shayan Ullah** - UI/UX Designer & Frontend Developer (BU-01-1354252-074)
-4. **Uzair Ali** - Content Developer & Documentation Specialist (BU-01-135252-081)
+- **Responsive Multi-Page Structure**: Semantic HTML5 layout across home, events, executive team, and contact views.
+- **Custom CSS Architecture**: Responsive styling using CSS Flexbox and media queries without heavy external layout dependencies.
+- **Interactive JavaScript Elements**: Dynamic mobile navigation toggle, modal overlays, and client-side form validation.
+- **Static Deployment**: Structured for direct hosting via GitHub Pages or any static web server.
 
-**Individual Contributions:**
-- **Hamza Imran:** HTML structure, CSS styling, Bootstrap integration, form validation, GitHub repository management
-- **Saqib Shah:** Project architecture, JavaScript functionality, GitHub Pages deployment setup
-- **Shayan Ullah:** Complete UI/UX design, responsive layouts, CSS animations, color scheme
-- **Uzair Ali:** Content creation, documentation, quality assurance, academic compliance
+---
 
-## 🎯 Project Objectives
+## Development Team & Academic Context
 
-This project was developed to:
-- Demonstrate proficiency in HTML, CSS, and JavaScript
-- Create a professional, university-level website
-- Implement responsive design principles
-- Follow strict ICT project requirements
-- Showcase proper file organization and documentation
-- Prepare for viva/presentation with clean, explainable code
+**Academic Context**: Introduction to Information & Communication Technology (ICT) Semester Project  
+**Team Contributions**:
+- **Hamza Imran**: HTML structure, core CSS stylesheets, layout architecture, and form validation.
+- **Saqib Shah**: JavaScript interactivity and deployment configuration.
+- **Shayan Ullah**: UI/UX design, CSS animations, and color scheme.
+- **Uzair Ali**: Content authoring, documentation, and quality verification.
+
+---
+
+## Repository Structure
+
+```
+.
+├── index.html                # Main landing page
+├── pages/                    # Sub-pages (About, Events, Contact, Team)
+├── css/                      # Stylesheets and media queries
+├── images/                   # Static graphic assets
+├── videos/                   # Multimedia content
+└── README.md
+```
+
+---
+
+## Local Setup
+
+Open `index.html` directly in any web browser, or launch a local preview server:
+
+```bash
+# Clone the repository
+git clone https://github.com/HamzaKhanBUIC/University-Tech-Society---Student-Organization-Website.git
+cd University-Tech-Society---Student-Organization-Website
+
+# Run local preview
+python -m http.server 8000
+```
+
+---
+
+## License
+
+Open-source under the MIT License.
