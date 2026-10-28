@@ -1,69 +1,50 @@
-# University Tech Society: Student Organization Portal
+# University Tech Society: Student Organization Website
 
-> Multi-page responsive static web portal built for the university ICT semester project demonstrating HTML5, CSS3 styling, and JavaScript form validation.
+> A 4-page static website for a fictional university tech society, built as our team project for the first-semester Introduction to ICT course: HTML, CSS, a little JavaScript and simulated sign-up forms.
 
-[![HTML5](https://img.shields.io/badge/Language-HTML5-E34F26.svg?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/Styles-CSS3-1572B6.svg?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/Scripts-JavaScript-F7DF1E.svg?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+**Status:** Completed course project (Dec 2025) · Team of 4; my role: HTML structure, core CSS and layout, form validation
+**Demo:** [Live site](https://hamzakhanbuic.github.io/University-Tech-Society---Student-Organization-Website/)
 
----
+## Pages
 
-## Overview
+Home (`index.html`), Events (`pages/events.html`), Register (`pages/register.html`) and About (`pages/about.html`). The team and "get involved" parts are sections of the Home and About pages. There are no Contact or Team pages.
 
-This repository contains a multi-page static portal designed for a university student technology organization. Developed as a collaborative foundation project, the site implements responsive layout techniques, navigation menus, event galleries, registration workflows, and client-side form validation.
+## Quickstart
 
----
-
-## Core Capabilities
-
-- **Responsive Multi-Page Structure**: Semantic HTML5 layout across home, events, executive team, and contact views.
-- **Custom CSS Architecture**: Responsive styling using CSS Flexbox and media queries without heavy external layout dependencies.
-- **Interactive JavaScript Elements**: Dynamic mobile navigation toggle, modal overlays, and client-side form validation.
-- **Static Deployment**: Structured for direct hosting via GitHub Pages or any static web server.
-
----
-
-## Development Team & Academic Context
-
-**Academic Context**: Introduction to Information & Communication Technology (ICT) Semester Project  
-**Team Contributions**:
-- **Hamza Imran**: HTML structure, core CSS stylesheets, layout architecture, and form validation.
-- **Saqib Shah**: JavaScript interactivity and deployment configuration.
-- **Shayan Ullah**: UI/UX design, CSS animations, and color scheme.
-- **Uzair Ali**: Content authoring, documentation, and quality verification.
-
----
-
-## Repository Structure
-
-```
-.
-├── index.html                # Main landing page
-├── pages/                    # Sub-pages (About, Events, Contact, Team)
-├── css/                      # Stylesheets and media queries
-├── images/                   # Static graphic assets
-├── videos/                   # Multimedia content
-└── README.md
-```
-
----
-
-## Local Setup
-
-Open `index.html` directly in any web browser, or launch a local preview server:
+No build step and no dependencies. Open `index.html` in a browser, or serve it locally:
 
 ```bash
-# Clone the repository
 git clone https://github.com/HamzaKhanBUIC/University-Tech-Society---Student-Organization-Website.git
 cd University-Tech-Society---Student-Organization-Website
-
-# Run local preview
 python -m http.server 8000
 ```
 
----
+Then open http://localhost:8000.
+
+## Configuration
+
+None. The pages load Font Awesome and Google Fonts from CDNs (Bootstrap 5.3.0-alpha1 on the Register page only), plus a few Unsplash images, so they need an internet connection.
+
+## Team
+
+- **Hamza Imran**: HTML structure, core CSS, layout, form validation.
+- **Saqib Shah**: JavaScript interactivity and deployment.
+- **Shayan Ullah**: UI/UX design, CSS animations, color scheme.
+- **Uzair Ali**: content writing, documentation, quality checks.
+
+(Roles as listed on the About page.)
+
+## Limitations
+
+- The forms are simulations. Submitting shows an alert and nothing is sent or stored.
+- No tests, no linting.
+- No favicon: every page links `images/favicon.ico`, which does not exist (404).
+- About 23 links are `#` placeholders (for example the social icons).
+- The event form writes the user's own input into the page with `innerHTML` (self-XSS only, nothing is stored or shared).
+- Bootstrap on the Register page is a pre-release version (5.3.0-alpha1), and the CDN assets have no integrity hashes.
+- About 40 MB of MP4 video is tracked in the repository.
+- It is a course project and not a maintained site.
 
 ## License
 
-Open-source under the MIT License.
+MIT. See [LICENSE](LICENSE).
