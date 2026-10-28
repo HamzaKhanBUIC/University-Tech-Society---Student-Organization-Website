@@ -2,7 +2,7 @@
 
 > A 4-page static website for a fictional university tech society, built as our team project for the first-semester Introduction to ICT course: HTML, CSS, a little JavaScript and simulated sign-up forms.
 
-**Status:** Completed course project (Dec 2025) · Team of 4; my role: HTML structure, core CSS and layout, form validation
+**Status:** Completed course project (Dec 2025) · Team of 4; I wrote most of the code (33 of 39 commits)
 **Demo:** [Live site](https://hamzakhanbuic.github.io/University-Tech-Society---Student-Organization-Website/)
 
 ## Pages
@@ -32,7 +32,7 @@ None. The pages load Font Awesome and Google Fonts from CDNs (Bootstrap 5.3.0-al
 - **Shayan Ullah**: UI/UX design, CSS animations, color scheme.
 - **Uzair Ali**: content writing, documentation, quality checks.
 
-(Roles as listed on the About page.)
+(Roles as listed on the About page for the course submission. Commit history: Hamza Imran 33, Saqib Shah 3, Shayan Ullah 3.)
 
 ## Limitations
 
